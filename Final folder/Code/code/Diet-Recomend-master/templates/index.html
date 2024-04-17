@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise and Diet Prediction</title>
+    <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("{{ url_for('static', filename='bg2.jpeg') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(176, 176, 212);
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #008080;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #006666;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Health and Diet Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br><br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required><br><br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <label for="sugar_Level">Sugar Level:</label>
+        <input type="number" id="sugar_Level" name="sugar_Level" required><br><br>
+        <label for="systolic_BP">Systolic BP:</label>
+        <input type="number" id="systolic_BP" name="systolic_BP" required><br><br>
+        <label for="diastolic_BP">Diastolic BP:</label>
+        <input type="number" id="diastolic_BP" name="diastolic_BP" required><br><br>
+        <label for="health_diseases">Health Diseases:</label>
+        <input type="text" id="health_diseases" name="health_diseases" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
